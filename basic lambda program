@@ -1,0 +1,40 @@
+interface Ajay
+{
+    public void start();
+}
+interface Google
+{
+    void delete(int num1,int num2);
+}
+public class Hello{
+
+     public static void main(String []args){
+        System.out.println("Hello World");
+        // working on the inner classes........///
+        //Ajay t=new Ajay(){
+            //@override
+          //  public void start()
+           // {
+             //   System.out.println("hello this is absoultly working.....");
+            //}//
+        //};
+        //t.start();
+        // working on the lambda in java 8.0...........//
+        Ajay l=()->{
+            System.out.println("hey it is also working ......");
+        };
+        //////working on the parameter lambda expressions...////
+        l.start();
+        Google r=(num1,num2)->
+        {
+            System.out.println("hello exiciting worikng on parameter....lambda expressions");
+            System.out.println(num1+":"+num2);
+        };
+        r.delete(8,5);
+        // working on the Thread..............using the lambda expressions...//
+        Thread t =new Thread();
+        t.setName("ayk");
+        System.out.println("The current thread is working::"+t.getName());
+        new Thread(()->System.out.println(t.currentThread().getName()+"running it is successfuly")).start();
+     }
+}
